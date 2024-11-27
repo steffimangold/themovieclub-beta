@@ -11,6 +11,7 @@
   --border-color: #182976;
   --white: #ffffff;
   --light-grey: #e4dede78;
+  --hover-color: rgb(212, 192, 251);
   --max-width: 1200px;
   --header-font: "Bebas Neue", sans-serif;
 }
@@ -92,7 +93,7 @@ nav {
 
 .nav__links a:hover {
   color: var(--text-light);
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.5px;
 }
 
 .nav__btns {
@@ -149,6 +150,12 @@ nav {
   border-radius: 5px;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.449);
   z-index: 1;
+  transition: 0.3s;
+}
+
+.header__image__card:hover {
+  background-color: var(--hover-color);
+  cursor: pointer;
 }
 
 .header__image span {
@@ -297,6 +304,12 @@ input::placeholder {
 }
 .header__content button:hover {
   background-color: var(--button-color-dark);
+}
+
+.bar {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  text-align: center;
 }
 
 /* Responsive Design */
@@ -454,7 +467,11 @@ input::placeholder {
 }
 @media (min-width: 1200px) {
   .header__image .blob {
-    width: 600px; /* Fixed size for large screens */
+    width: 600px;
     height: 600px;
+  }
+  .header__image {
+    grid-area: 1/2/2/3;
+    margin: 0 auto;
   }
 }
